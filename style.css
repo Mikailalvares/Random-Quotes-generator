@@ -1,0 +1,98 @@
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Quote Container Styles */
+.container {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 20px;
+    text-align: center;
+}
+
+#quoteText {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#author {
+    font-size: 18px;
+}
+
+/* Button Styles */
+button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Comment Styles */
+#commentContainer {
+    max-width: 500px;
+    text-align: left; /* Align comments to the left */
+}
+
+#commentInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #e74c3c;
+    background-color: transparent;
+}
+
+#addCommentButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#addCommentButton:hover {
+    background-color: #c0392b;
+}
+
+#commentsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    background-color: #ffffff22;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Image Styles */
+#quoteImage {
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+}

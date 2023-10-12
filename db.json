@@ -1,0 +1,25 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "content": "My first quote content",
+      "author": "Author Name",
+      "likeCount": 0,
+      "comments": []
+    },
+    {
+      "id": 2,
+      "content": "My second quote content",
+      "author": "Another Author",
+      "likeCount": 0,
+      "comments": []
+    },
+    {
+      "id": 3,
+      "content": "My third quote content",
+      "author": "Yet Another Author",
+      "likeCount": 0,
+      "comments": []
+    }
+  ]
+}
