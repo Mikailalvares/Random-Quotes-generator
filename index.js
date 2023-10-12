@@ -47,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    getQuoteButton.addEventListener("click", () => {
-        fetchRandomQuote();
+  
     });
 
     prevQuoteButton.addEventListener("click", () => {
