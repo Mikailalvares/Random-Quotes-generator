@@ -51,7 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchRandomQuote();
     });
 
-    
+    prevQuoteButton.addEventListener("click", () => {
+        if (currentQuoteIndex > 0) {
+            currentQuoteIndex--;
+            displayQuote(currentQuoteIndex);
+        } else {
+            alert("No previous quotes available.");
+        
     });
 
     function fetchRandomQuote() {
