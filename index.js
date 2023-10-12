@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 fetch(unsplashUrl)
                     .then((response) => {
                         quoteImage.src = response.url;
-                    }((error) => {
+                    })((error) => {
                         console.error("Error fetching image:", error);
                     });
 
