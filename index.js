@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             displayQuote(currentQuoteIndex);
         } else {
             alert("No previous quotes available.");
-        
+        }
     });
 
     function fetchRandomQuote() {
@@ -71,8 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 fetch(unsplashUrl)
                     .then((response) => {
                         quoteImage.src = response.url;
-                    })
-                    .catch((error) => {
+                    }((error) => {
                         console.error("Error fetching image:", error);
                     });
 
