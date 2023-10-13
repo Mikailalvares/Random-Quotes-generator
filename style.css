@@ -53,19 +53,27 @@ body {
     margin: 20px;
     background-color: rgba(76, 175, 80, 0.7);
 }
-
-#quoteText {
+#quoteContainer {
+    background-image: url("https://source.unsplash.com/1920x1080/?quote"); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
     font-size: 24px;
     font-weight: bold;
     font-family: 'Lora', 'Times New Roman', serif; /* Use 'Lora' as the font for quotes with fallbacks */
-    margin-bottom: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 20px;
     color: white;
+}
+
+#quoteText {
+    margin-bottom: 10px;
 }
 
 #author {
     font-size: 18px;
     font-family: 'Lora', 'Times New Roman', serif;
-    color: white;
 }
 
 /* Button Styles */
