@@ -1,37 +1,61 @@
-/* Styles */
-body {
-    background-color: #3498db;
-    color: white;
-    font-family: 'Roboto', Arial, sans-serif; /* Use 'Roboto' as the primary font with fallbacks */
+/* Reset default margin and padding */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fullscreen Styles */
+body {
+    background-image: url("https://source.unsplash.com/1920x1080/?quote"); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional - for a fixed background */
+    font-family: 'Roboto', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     text-align: center;
+    margin: 0;
+    color: white;
 }
 
 .container {
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgba(76, 175, 80, 0.7); /* Background color for the container */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    margin: 20px;
+    max-width: 800px; /* Adjust the maximum width as needed */
     text-align: center;
+}
+
+/* Loading Spinner Styles */
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #4CAF50; /* Green color for the spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none; /* Initially hidden */
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Quote Styles */
 #quoteContainer {
-    max-width: 500px;
     padding: 20px;
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     margin: 20px;
-    background-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.7);
 }
 
 #quoteText {
@@ -39,11 +63,13 @@ body {
     font-weight: bold;
     font-family: 'Lora', 'Times New Roman', serif; /* Use 'Lora' as the font for quotes with fallbacks */
     margin-bottom: 10px;
+    color: white;
 }
 
 #author {
     font-size: 18px;
     font-family: 'Lora', 'Times New Roman', serif;
+    color: white;
 }
 
 /* Button Styles */
@@ -74,7 +100,7 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 10px;
     color: white;
-    background-color: transparent;
+    background-color: rgba(76, 175, 80, 0.7);
 }
 
 #addCommentButton {
@@ -104,6 +130,7 @@ button:hover {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
+    color: white;
 }
 
 /* Responsive Design */
