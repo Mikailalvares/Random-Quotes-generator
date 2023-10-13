@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteImage.alt = "Quote Image";
     quoteContainer.appendChild(quoteImage);
 
-    // Initialize quotes data from localStorage or set an empty array if it doesn't exist
+    // Initialize quotes data from localStorage 
+    //set an empty array if it doesn't exist
     let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
 
     let currentQuoteIndex = -1;
@@ -101,6 +102,32 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             );
         }
+    }
+    
+    getQuoteButton.addEventListener("click", () => {
+        showLoadingSpinner();
+        fetchRandomQuote();
+    });
+
+    prevQuoteButton.addEventListener("click", () => {
+        showLoadingSpinner();
+        if (currentQuoteIndex > 0) {
+            currentQuoteIndex--;
+            displayQuote(currentQuoteIndex);
+        } else {
+            alert("No previous quotes available.");
+            hideLoadingSpinner();
+        }
+    });
+
+    // Function to show the loading spinner
+    function showLoadingSpinner() {
+        loadingSpinner.style.display = "block";
+    }
+
+    // Function to hide the loading spinner
+    function hideLoadingSpinner() {
+        loadingSpinner.style.display = "none";
     }
 
     fetchRandomQuote();
