@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
             quotes[currentQuoteIndex].likeCount++;
             likeCountSpan.textContent = quotes[currentQuoteIndex].likeCount;
 
+            // Save the updated quotes data to localStorage
+            localStorage.setItem("quotes", JSON.stringify(quotes));
+        }
     });
 
     addCommentButton.addEventListener("click", () => {
