@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const apiUrl = "https://api.quotable.io/random";
-    const unsplashUrl = "https://source.unsplash.com/400x300/?quote";
+    const unsplashUrl = "https://source.unsplash.com/1920x1080/?quote";
 
     const quoteText = document.getElementById("quoteText");
     const author = document.getElementById("author");
@@ -18,10 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteImage.alt = "Quote Image";
     quoteContainer.appendChild(quoteImage);
 
-    // Initialize quotes data from localStorage 
-    //set an empty array if it doesn't exist
+    // Initialize quotes data from localStorage or set an empty array if it doesn't exist
     let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
-
     let currentQuoteIndex = -1;
 
     likeButton.addEventListener("click", () => {
@@ -99,35 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const listItem = document.createElement("li");
                 listItem.textContent = comment;
                 commentsList.appendChild(listItem);
-            }
-            );
+            });
         }
-    }
-    
-    getQuoteButton.addEventListener("click", () => {
-        showLoadingSpinner();
-        fetchRandomQuote();
-    });
-
-    prevQuoteButton.addEventListener("click", () => {
-        showLoadingSpinner();
-        if (currentQuoteIndex > 0) {
-            currentQuoteIndex--;
-            displayQuote(currentQuoteIndex);
-        } else {
-            alert("No previous quotes available.");
-            hideLoadingSpinner();
-        }
-    });
-
-    // Function to show the loading spinner
-    function showLoadingSpinner() {
-        loadingSpinner.style.display = "block";
-    }
-
-    // Function to hide the loading spinner
-    function hideLoadingSpinner() {
-        loadingSpinner.style.display = "none";
     }
 
     fetchRandomQuote();
