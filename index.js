@@ -19,7 +19,21 @@ document.addEventListener("DOMContentLoaded", () => {
     let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
     let currentQuoteIndex = -1;
 
-    // Function to fetch a random quote
+    // Function to display a quote
+    function displayQuote(index) {
+        if (index >= 0 && index < quotes.length) {
+            quoteText.textContent = quotes[index].content;
+            likeCountSpan.textContent = quotes[index].likeCount;
+            commentsList.innerHTML = "";
+            quotes[index].comments.forEach((comment) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = comment;
+                commentsList.appendChild(listItem);
+            });
+        }
+    }
+
+    // Function to fetch a random quote and image
     function fetchRandomQuote() {
         fetch(apiUrl)
             .then((response) => response.json())
@@ -28,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 quoteText.textContent = content;
                 author.textContent = `- ${quoteAuthor}`;
 
-                // Fetch a random image for the quote
                 fetch(unsplashUrl)
                     .then((response) => {
                         quoteImage.style.backgroundImage = `url(${response.url})`;
@@ -37,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.error("Error fetching image:", error);
                     });
 
-                // Update the current quote index and save it to localStorage
                 currentQuoteIndex = quotes.length;
                 quotes.push({ content, likeCount: 0, comments: [] });
                 likeCountSpan.textContent = quotes[currentQuoteIndex].likeCount;
@@ -52,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // Function to handle liking a quote
-    function handleLike() {
+    // Event listener for the "Like" button
+    likeButton.addEventListener("click", () => {
         if (currentQuoteIndex >= 0) {
             quotes[currentQuoteIndex].likeCount++;
             likeCountSpan.textContent = quotes[currentQuoteIndex].likeCount;
@@ -61,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Save the updated quotes data to localStorage
             localStorage.setItem("quotes", JSON.stringify(quotes));
         }
-    }
+    });
 
-    // Function to handle adding a comment
-    function handleComment() {
+    // Event listener for the "Add Comment" button
+    addCommentButton.addEventListener("click", () => {
         const comment = commentInput.value;
         if (comment.trim() !== "" && currentQuoteIndex >= 0) {
             quotes[currentQuoteIndex].comments.push(comment);
@@ -76,12 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
             // Save the updated quotes data to localStorage
             localStorage.setItem("quotes", JSON.stringify(quotes));
         }
-    }
+    });
 
-    // Event listeners
-    likeButton.addEventListener("click", handleLike);
-    addCommentButton.addEventListener("click", handleComment);
-    getQuoteButton.addEventListener("click", fetchRandomQuote);
+    // Event listener for the "Get Quote" button
+    getQuoteButton.addEventListener("click", () => {
+        fetchRandomQuote();
+    });
+
+    // Event listener for the "Previous Quote" button
     prevQuoteButton.addEventListener("click", () => {
         if (currentQuoteIndex > 0) {
             currentQuoteIndex--;
