@@ -1,6 +1,4 @@
-/* Reset default margin and padding */
-*,
-* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +6,7 @@
 
 /* Fullscreen Styles */
 body {
-    background-color: #3498db;
+    background-color: #083452;
     color: white;
     font-family: 'Roboto', Arial, sans-serif;
     display: flex;
@@ -21,20 +19,20 @@ body {
 }
 
 #quoteImage {
-    width: 100%; /* Use 100% for full-width background */
-    height: 100vh; /* Use 100vh for full-height background */
+    width: 100%; 
+    height: 100vh; 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Optional - for a fixed background */
+    background-attachment: fixed; 
 }
 
 .container {
-    padding: 20px;
-    border-radius: 10px;
+    padding: 80px;
+    border-radius: 40px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    max-width: 800px; /* Adjust the maximum width as needed */
+    max-width: 1000px;
     text-align: center;
-    background-color: rgba(76, 175, 80, 0.7);
+    background-color: rgba(26, 202, 32, 0.7);
     font-family: 'Lora', 'Times New Roman', serif;
     color: white;
 }
@@ -42,7 +40,7 @@ body {
 /* Loading Spinner Styles */
 .loading-spinner {
     border: 4px solid rgba(255, 255,255, 0.3);
-    border-top: 4px solid #4CAF50;
+    border-top: 4px solid #3cb840;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -63,7 +61,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     margin: 20px;
-    background-color: rgba(76, 175, 80, 0.7);
+    background-color: rgba(53, 194, 58, 0.7);
     background-image: url("https://source.unsplash.com/1920x1080/?quote");
     background-size: cover;
     background-position: center;
@@ -78,7 +76,7 @@ body {
 }
 
 #author {
-    font-size: 18px;
+    font-size: 19px;
     font-family: 'Lora', 'Times New Roman', serif;
 }
 
@@ -115,7 +113,7 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 10px;
     color: white;
-    background-color: rgba(76, 175, 80, 0.7);
+    background-color: rgba(37, 204, 42, 0.7);
 }
 
 #addCommentButton {
@@ -145,7 +143,7 @@ button:hover {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 /* Responsive Design */

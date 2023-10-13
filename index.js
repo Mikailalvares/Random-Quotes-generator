@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const quoteContainer = document.getElementById("quoteContainer");
 
-    // Initialize quotes data from localStorage or set an empty array if it doesn't exist
+    // Initialize quotes data from localStorage 
+    // set an empty array if it doesn't exist
     let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
     let currentQuoteIndex = -1;
 
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch((error) => {
                 console.error("Error fetching quote:", error);
-                // You can display an error message to the user here
+                //display an error message to the user here
             });
     }
 
