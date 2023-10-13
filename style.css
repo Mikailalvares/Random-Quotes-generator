@@ -1,5 +1,7 @@
-/* Body Styles */
+/* Common Styles */
 body {
+    background-color: #3498db; /* A shade of blue for the background */
+    color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -11,9 +13,8 @@ body {
     text-align: center;
 }
 
-/* Quote Container Styles */
 .container {
-    background-color: #3498db;
+    background-color: #4CAF50; /* A shade of green for the container background */
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -22,10 +23,21 @@ body {
     text-align: center;
 }
 
+/* Quote Styles */
+#quoteContainer {
+    max-width: 500px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 20px;
+    background-color: #4CAF50; /* A shade of green for the quote container background */
+}
+
 #quoteText {
     font-size: 24px;
     font-weight: bold;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 #author {
@@ -34,39 +46,38 @@ body {
 
 /* Button Styles */
 button {
-    background-color: #e74c3c;
-    color: white;
+    background-color: white;
+    color: #4CAF50; /* A shade of green for the button text */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10px;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #c0392b;
+    background-color: #4CAF50; /* Darker shade of green on hover */
+    color: white; /* White text on hover for better contrast */
 }
 
 /* Comment Styles */
 #commentContainer {
     max-width: 500px;
-    text-align: left; /* Align comments to the left */
 }
 
 #commentInput {
     width: 100%;
     padding: 10px;
-    border: 1px solid #e74c3c;
+    border: 1px solid white;
     border-radius: 5px;
-    margin: 10px 0;
-    color: #e74c3c;
+    margin-bottom: 10px;
+    color: white;
     background-color: transparent;
 }
 
 #addCommentButton {
-    background-color: #e74c3c;
-    color: white;
+    background-color: white;
+    color: #4CAF50; /* A shade of green for the button text */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -75,24 +86,31 @@ button:hover {
 }
 
 #addCommentButton:hover {
-    background-color: #c0392b;
+    background-color: #4CAF50; /* Darker shade of green on hover */
+    color: white; /* White text on hover for better contrast */
 }
 
 #commentsList {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .comment {
     background-color: #ffffff22;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px 0;
+    margin-bottom: 5px;
 }
 
-/* Image Styles */
-#quoteImage {
-    width: 300px; /* Adjust the width as needed */
-    height: auto;
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    #quoteContainer {
+        max-width: 80%;
+    }
 }
